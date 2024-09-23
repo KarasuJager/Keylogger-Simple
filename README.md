@@ -4,10 +4,10 @@ Instalación de dependencias:
 Para usar este script, necesitas instalar la librería pynput. Puedes instalarla fácilmente con pip:
 ---pip install pynput---    
 **Instrucciones para usar:**
-   - Guarda el script en un archivo, por ejemplo keylogger.py.
-   -Dale permisos de ejecución si es necesario:
+   - Guarda el script en un archivo, por ejemplo keylogger.py
+   - Dale permisos de ejecución si es necesario:
 ---chmod +x keylogger.py---
-   -Ejecuta el script en tu terminal o consola:
+   - Ejecuta el script en tu terminal o consola:
 ---python keylogger.py---
 
 
